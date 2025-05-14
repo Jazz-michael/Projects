@@ -1,5 +1,21 @@
 console.log("Hello World");
 
+document.querySelectorAll('[industry-card]').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.classList.add('is-active');
+    card.querySelectorAll('[toggle-class]').forEach(el => {
+      el.classList.add('is-active');
+    });
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.classList.remove('is-active');
+    card.querySelectorAll('[toggle-class]').forEach(el => {
+      el.classList.remove('is-active');
+    });
+  });
+});
+
 
 // Home-Hero stars
 const settings = {
@@ -7,7 +23,7 @@ const settings = {
     overlap: 0.4       // Interval between starting new animations (in seconds)
   };
   
-  const stars = gsap.utils.toArray('[clip-path]');
+  const stars = gsap.utils.toArray('[rx=1]');
   
   function animateStar(star) {
     gsap.fromTo(
@@ -31,4 +47,7 @@ const settings = {
   
   // Start the animation loop
   loopAnimation();
+
+
+
   
