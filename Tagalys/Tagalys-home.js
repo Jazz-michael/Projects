@@ -1,5 +1,1 @@
-hello
-hello 2
-jee
-
-third
+    alert("Jazz, you've done it!");
